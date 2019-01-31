@@ -1,0 +1,163 @@
+
+
+# decent cell signatures
+Astro_FGFR3
+OPC_PDGFRA
+Oligo_OPALIN
+Inh_PVALB
+Inh_VIP
+Inh_LAMP5
+Inh_SST
+Exc_FEZF2
+Exc_RORB
+Exc_THEMIS
+Micro_TYROBP  # fixed
+Exc_LINC00507 # 11% error on 2400 cells  # fixed removed 252 cells #
+
+# OK - but not used.
+Exc_LAMP5     # 15% error on 700 cells
+Inh_PAX6      # 17% error on 125 cells
+
+
+# not good signatures
+Exc_SLC17A7    # high error v. small group
+Endo_NOSTRIN   #only 9 cells!
+Inh_GAD1       # very small group
+
+
+*** Rescued the Micros ***
+OOB estimate of  error rate: 0.03%
+Confusion matrix:
+      0  1  class.error
+0 15864  1 6.303183e-05
+1     3 60 4.761905e-02
+
+
+** work on rescuing the Exc_LINC00507 **
+-- removed low variance genes, improved the error 1% --
+-- removed the 252 bad predicted cells --
+
+remIdx <- which(idcode == 1 & rffit$predicted == 0)
+
+**** Removed those 252 cells AND ****
+
+Confusion matrix:
+      0    1 class.error
+0 13384   90 0.006679531
+1    95 2107 0.043142598
+
+---------------------------------------------------------
+
+$Inh_SST
+$Inh_SST$confusion
+0    1 class.error
+0 14349   21 0.001461378
+1    97 1461 0.062259307
+
+
+$Exc_RORB
+$Exc_RORB$confusion
+0    1 class.error
+0 11519  148  0.01268535
+1    73 4188  0.01713213
+
+
+$Exc_FEZF2
+$Exc_FEZF2$confusion
+0    1 class.error
+0 14778   23 0.001553949
+1    25 1102 0.022182786
+
+
+$Inh_LAMP5
+$Inh_LAMP5$confusion
+0   1  class.error
+0 15292   3 0.0001961425
+1    10 623 0.0157977883
+
+
+$Oligo_OPALIN
+$Oligo_OPALIN$confusion
+0   1  class.error
+0 15611   4 0.0002561639
+1     5 308 0.0159744409
+
+
+$Exc_THEMIS
+$Exc_THEMIS$confusion
+0    1 class.error
+0 14082   31 0.002196556
+1    51 1764 0.028099174
+
+
+$Inh_VIP
+$Inh_VIP$confusion
+0   1 class.error
+0 14903  23 0.001540935
+1    34 968 0.033932136
+
+
+$Inh_PVALB
+$Inh_PVALB$confusion
+0   1 class.error
+0 15208  18 0.001182188
+1    25 677 0.035612536
+
+
+$OPC_PDGFRA
+$OPC_PDGFRA$confusion
+0   1  class.error
+0 15689   1 6.373486e-05
+1     3 235 1.260504e-02
+
+
+$Inh_PAX6
+$Inh_PAX6$confusion
+0   1 class.error
+0 15793   0   0.0000000
+1    23 112   0.1703704
+
+
+$Astro_FGFR3
+$Astro_FGFR3$confusion
+0   1 class.error
+0 15637   0  0.00000000
+1     3 288  0.01030928
+
+
+$Exc_LINC00507
+$Exc_LINC00507$confusion
+0    1 class.error
+0 13352  122 0.009054475
+1   272 2182 0.110839446
+
+
+$Exc_LAMP5
+$Exc_LAMP5$confusion
+0   1 class.error
+0 15077  39 0.002580048
+1   119 693 0.146551724
+
+
+$Inh_GAD1
+$Inh_GAD1$confusion
+0  1  class.error
+0 15793  1 6.331518e-05
+1    57 77 4.253731e-01
+
+
+$Micro_TYROBP
+[1] NA
+
+$Endo_NOSTRIN
+$Endo_NOSTRIN$confusion
+0 1 class.error
+0 15919 0   0.0000000
+1     5 4   0.5555556
+
+
+$Exc_SLC17A7
+$Exc_SLC17A7$confusion
+0  1 class.error
+0 15872  0   0.0000000
+1    27 29   0.4821429
