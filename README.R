@@ -83,6 +83,8 @@
 
 #------------------------------------------------------------------
 
+################  MayoCibersortBootStrap.R #########################
+
 #  Now to do deconvolution.
 
 # Noticed that correlations very high for small number of genes ... but also
@@ -117,3 +119,26 @@
 # found that many of the 'zeros' we saw when using a static signature, were just small numbers.
 
 # Can also get a SD out too.
+
+
+#------------------------------------------------------------------
+
+################  expressionDivision.R #########################
+
+# Then we divided the expression from the full cell matrix...
+# which is average expression over cells for a cell type.
+
+#  Divided_Gene_Expression_i_patent_j = Gene_ij * Cell_Sig_jk * Cell_Quantity_jk  
+
+# so, taking the gene expression value for gene i for patient j,
+# we multiply in the normalized expression expected for this cell type (Cell_Sig_jk)
+# and multiply in the quantity of cell for patient j.
+
+
+
+
+
+
+
+
+
